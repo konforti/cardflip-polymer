@@ -1,0 +1,17 @@
+card-flip {
+    width: 200px;
+    height: 200px;
+}
+.card-one > *:first-child {
+    background-color: red;
+}
+.card-one > *:last-child {
+    background-color: blue;
+}
+.card-two > *:first-child {
+    background-color: green;
+}
+.card-two > *:last-child {
+    background-color: yellow;
+}
+

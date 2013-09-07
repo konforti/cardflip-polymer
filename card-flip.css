@@ -1,0 +1,155 @@
+card-flip {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+card-flip > * {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+    -moz-transition-duration: 0.25s;
+    -ms-transition-duration: 0.25s;
+    -o-transition-duration: 0.25s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;my-element
+    -o-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+    /* DO NOT ERASE THESE TRANSFORM-STYLES; they fix a flickering issue in FFOS */
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+card-flip > *:first-child {
+    transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 2px);
+    -ms-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 2px);
+    -webkit-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 2px);
+    -o-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 2px);
+    z-index: 2; }
+card-flip > *:last-child {
+    transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 1px);
+    z-index: 1; }
+card-flip[flipdir="up"] > *:first-child,
+card-flip[flipdir="down"] > *:first-child {
+    transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 2px);
+    -ms-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 2px);
+    -webkit-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 2px);
+    -o-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 2px); }
+card-flip[flipdir="up"] > *:last-child {
+    transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 1px); }
+card-flip[flipdir="down"] > *:last-child {
+    transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 1px); }
+
+/* Flipped */
+card-flip[flipped] {
+     /* Note: adding a dummy style to flipped flipboxes forces Android 4+'s
+     * native browser to rerender the flipbox, fixing an issue where the flipping
+     * animation wouldn't play normally */
+}
+card-flip:after {
+     /* DO NOT ERASE THIS :after SELECTOR */
+    content: "";
+    display: none;
+}
+card-flip[flipped] > *:first-child {
+    transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    -ms-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    -webkit-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    -o-transform: perspective(800px) rotateY(180deg) translate3d(0px, 0px, 2px);
+    z-index: 1;
+}
+card-flip[flipped] > *:last-child {
+    transform: perspective(800px) rotateY(360deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateY(360deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateY(360deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateY(360deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateY(360deg) translate3d(0px, 0px, 1px);
+    z-index: 2;
+}
+
+card-flip[flipdir="left"][flipped] > *:first-child {
+    transform: perspective(800px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+    -ms-transform: perspective(800px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(800px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+    -webkit-transform: perspective(800px) rotateY(-180deg) translate3d(0px, 0px, 2px);
+    -o-transform: perspective(800px) rotateY(-180deg) translate3d(0px, 0px, 2px); }
+card-flip[flipdir="left"][flipped] > *:last-child {
+    transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateY(0deg) translate3d(0px, 0px, 1px); }
+
+card-flip[flipdir="up"][flipped] > *:first-child {
+    transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 2px);
+    -ms-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 2px);
+    -webkit-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 2px);
+    -o-transform: perspective(800px) rotateX(180deg) translate3d(0px, 0px, 2px); }
+card-flip[flipdir="up"][flipped] > *:last-child {
+    transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px); }
+
+card-flip[flipdir="down"][flipped] > *:first-child {
+    transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 2px);
+    -ms-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 2px);
+    -moz-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 2px);
+    -webkit-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 2px);
+    -o-transform: perspective(800px) rotateX(-180deg) translate3d(0px, 0px, 2px); }
+card-flip[flipdir="down"][flipped] > *:last-child {
+    transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -ms-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -moz-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -webkit-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px);
+    -o-transform: perspective(800px) rotateX(0deg) translate3d(0px, 0px, 1px); }
